@@ -1,2 +1,2 @@
 # Crop-Disease-Detection-Tool
-An image recognition tool that identifies common crop diseases from leaf photos.
+A Java based image recognition system to identify crop diseases from leaf photos using Deeplearning4j and Spring Boot
