@@ -1,0 +1,35 @@
+package com.cropdisease.controller;
+
+import com.cropdisease.model.DiseasePrediction;
+import com.cropdisease.service.DiseaseClassificationService;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+
+@RestController
+@RequestMapping("/api/disease")
+@CrossOrigin(origins = "*")
+public class DiseaseController {
+    
+    private final DiseaseClassificationService classificationService;
+    
+    public DiseaseController(DiseaseClassificationService classificationService) {
+        this.classificationService = classificationService;
+    }
+    
+    @PostMapping("/predict")
+    public ResponseEntity<List<DiseasePrediction>> predictDisease(@RequestBody String imagePath) {
+        try {
+            List<DiseasePrediction> predictions = classificationService.predictDisease(imagePath);
+            return ResponseEntity.ok(predictions);
+        } catch (Exception e) {
+            return ResponseEntity.badRequest().build();
+        }
+    }
+    
+    @GetMapping("/health")
+    public ResponseEntity<String> healthCheck() {
+        return ResponseEntity.ok("Crop Disease Detection Service is running!");
+    }
+}

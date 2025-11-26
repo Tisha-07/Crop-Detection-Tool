@@ -1,0 +1,44 @@
+package com.cropdisease.model;
+
+public class DiseasePrediction {
+    private String className;
+    private double confidence;
+    private String description;
+    private String treatment;
+    
+    public DiseasePrediction(String className, double confidence) {
+        this.className = className;
+        this.confidence = confidence;
+        setDescriptionAndTreatment();
+    }
+    
+    // Getters and setters
+    public String getClassName() { return className; }
+    public void setClassName(String className) { this.className = className; }
+    
+    public double getConfidence() { return confidence; }
+    public void setConfidence(double confidence) { this.confidence = confidence; }
+    
+    public String getDescription() { return description; }
+    public String getTreatment() { return treatment; }
+    
+    private void setDescriptionAndTreatment() {
+        switch(this.className.toLowerCase()) {
+            case "early_blight":
+                this.description = "Fungal disease causing concentric rings on leaves";
+                this.treatment = "Apply fungicides containing chlorothalonil";
+                break;
+            case "late_blight":
+                this.description = "Destructive fungal disease with water-soaked lesions";
+                this.treatment = "Use copper-based fungicides and remove infected plants";
+                break;
+            case "healthy":
+                this.description = "Plant shows no signs of disease";
+                this.treatment = "Continue current care practices";
+                break;
+            default:
+                this.description = "Unknown disease";
+                this.treatment = "Consult agricultural expert";
+        }
+    }
+}

@@ -1,0 +1,26 @@
+package com.cropdisease.service;
+
+import com.cropdisease.model.DiseasePrediction;
+import org.springframework.stereotype.Service;
+
+import java.util.ArrayList;
+import java.util.List;
+
+@Service
+public class DiseaseClassificationService {
+    
+    private final String[] CLASS_NAMES = {"early_blight", "late_blight", "healthy"};
+    
+    public List<DiseasePrediction> predictDisease(String imagePath) {
+        // For demonstration - returns mock data
+        return getMockPredictions();
+    }
+    
+    private List<DiseasePrediction> getMockPredictions() {
+        List<DiseasePrediction> predictions = new ArrayList<>();
+        predictions.add(new DiseasePrediction("early_blight", 0.75));
+        predictions.add(new DiseasePrediction("late_blight", 0.20));
+        predictions.add(new DiseasePrediction("healthy", 0.05));
+        return predictions;
+    }
+}
