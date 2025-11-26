@@ -11,7 +11,7 @@ A Java-based intelligent system that uses machine learning to identify common cr
 - **Multiple Crop Support**: Works with Tomato, Potato, and Corn plants
 - **Web Interface**: User-friendly browser-based application
 
-## Te chnologies/Tools Used
+## Technologies/Tools Used
 - **Backend**: Java, Spring Boot
 - **Frontend**: HTML, CSS, JavaScript
 - **Build Tool**: Maven
@@ -27,5 +27,5 @@ A Java-based intelligent system that uses machine learning to identify common cr
 ### Installation Steps
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/YOUR_USERNAME/crop-disease-identification-system.git
+   git clone https://github.com/Tisha-07/crop-disease-identification-system.git
    cd crop-disease-identification-system
